@@ -26,7 +26,7 @@ export const deletarJogadorPorId = (id, callback) => {
 
 // Função para verificar as credenciais do jogador
 export const verificarCredenciais = (nome, senha, callback) => {
-    const query = 'SELECT * FROM jogadores WHERE nome = ? AND senha = ?';
+    const query = 'SELECT id, nome FROM jogadores WHERE nome = ? AND senha = ?';
     db.query(query, [nome, senha], callback);
 };
 

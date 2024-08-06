@@ -5,6 +5,8 @@ import{criarJogador,
     buscarJogadorPorId
 } from '../models/Jogador.js';
 
+import{deletarPersonagemDoJogador} from '../models/JogadorPersonagem.js'
+
 // criar um novo jogador
 export const criarNovoJogador = async (req, res) => {
     const { nome, senha } = req.body;
@@ -78,14 +80,14 @@ export const deletarJogador = async (req, res) => {
                 else resolve();
             });
         });
-
+*/
         await new Promise((resolve, reject) => {
-            deletePlayerCharacterByPlayerId(id, (err) => {
+            deletarPersonagemDoJogador(id, (err) => {
                 if (err) reject(err);
                 else resolve();
             });
         });
-        */
+        
         await new Promise((resolve, reject) => {
             deletarJogadorPorId(id, (err, results) => {
                 if (err) reject(err);
